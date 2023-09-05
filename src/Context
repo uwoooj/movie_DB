@@ -1,0 +1,25 @@
+import {createContext, useReducer} from 'react'
+import {themoviedb} from './comp/instans'
+export const MyContext = createContext();
+const reducer = ()=>{
+
+}
+function Context() {
+
+  const [data, dispatch] = useReducer(reducer,[])
+
+  const dataTrans = async (type,url)=>{
+    let res;
+    res = await themoviedb(url);
+    return res;    
+  }
+  
+
+  useParams()
+
+  return (
+    <MyContext.Provider value={data}>Context</MyContext.Provider>
+  )
+}
+
+export default Context
