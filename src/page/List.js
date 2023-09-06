@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function List() {
   const [movieDataP, setMovieDataP] = useState([]);
@@ -39,7 +40,7 @@ export default function List() {
           {movieDataP.map((e) => (
             <li key={e.id}>
               <img
-                src={`https://image.tmdb.org/t/p/w200${e.poster_path}`}
+                src={`https://image.tmdb.org/t/p/400${e.poster_path}`}
                 alt={e.title}
               />
               <h3>{e.title}</h3>
@@ -54,7 +55,7 @@ export default function List() {
           {movieDataT.map((e) => (
             <li key={e.id}>
               <img
-                src={`https://image.tmdb.org/t/p/w200${e.poster_path}`}
+                src={`https://image.tmdb.org/t/p/w400${e.poster_path}`}
                 alt={e.title}
               />
               <h3>{e.title}</h3>
@@ -68,8 +69,9 @@ export default function List() {
         <ul>
           {movieDataU.map((e) => (
             <li key={e.id}>
+              <Link to={`movie/${e.id}`}>자세히보기</Link>
               <img
-                src={`https://image.tmdb.org/t/p/w200${e.poster_path}`}
+                src={`https://image.tmdb.org/t/p/400${e.poster_path}`}
                 alt={e.title}
               />
               <h3>{e.title}</h3>

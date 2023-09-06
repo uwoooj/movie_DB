@@ -3,13 +3,16 @@
   margin: 0;
   padding: 0;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 html {
   margin-top: 100px;
   background-color: black;
 }
 .main {
-  background-color: rgb(8, 8, 8);
+  /* background-color: rgb(8, 8, 8); */
   width: 100%;
 }
 .header {
@@ -24,17 +27,20 @@ html {
   align-items: center;
 }
 
-h2 {
+h1 {
+  font-size: 2.5rem;
   color: white;
 }
 
+h2 {
+  margin-bottom: 35px;
+  color: #fff;
+}
 .wrap {
   margin: 30px;
   padding-top: 800px;
 }
 
-h2 {
-}
 .menu {
   display: flex;
   width: 100%;
@@ -57,6 +63,16 @@ h2 {
 
 .header-style:hover {
   color: red;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  transition: width 0.5s ease;
+}
+
+.header-style::after:hover {
+  color: red;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  transition: width 0.5s ease;
 }
 
 .movie-list {
@@ -65,7 +81,7 @@ h2 {
 
   padding: 0;
   margin: 0;
-  gap: 1rem !important; /* 영화 카드 사이 간격 */
+  /* 영화 카드 사이 간격 */
   width: 100%;
   height: 100%;
 }
@@ -73,6 +89,7 @@ h2 {
 .movie-list2 {
   flex: 0 0 auto;
   align-items: center;
+  width: 200px;
 }
 
 .movie-list2 h3 {
@@ -82,7 +99,7 @@ h2 {
 
 .movie-list2 img {
   display: block;
-  width: 100%;
+  width: 200px;
   height: 100%;
   object-fit: cover;
   border-radius: 5%;
@@ -183,9 +200,12 @@ h3 {
   overflow: hidden; /* Ensure child elements do not overflow */
 }
 .main-background2 {
+  background-size: cover; /* 필요에 따라 조정하세요 */
+  background-position: center;
+
   position: absolute;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   opacity: 0.5; /* Overall opacity */
 }
 .gradient-overlay {
@@ -213,7 +233,7 @@ h3 {
 .main-list2-1 {
   position: absolute;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   width: 100%;
   height: 100%;
@@ -221,6 +241,7 @@ h3 {
 }
 
 .main-poster {
+  border-radius: 15px;
   /*
   margin-right: 100px;
   width: 30vw;
@@ -229,16 +250,25 @@ h3 {
 }
 
 .main-list3 {
-  margin-left: 100px;
-  margin-right: 50px;
+  padding: 0 3rem;
+  position: relative;
+  width: 55%;
 }
 
 .main-list3 p {
   color: white;
+  font-size: 16px;
+  margin-top: 48px;
 }
 
+.p_wrap {
+  display: flex;
+  /* justify-content: center; */
+  /* width: 1478px; */
+}
 .main-list3 h3 {
-  font-size: 5rem;
+  font-size: 5.5rem;
+  line-height: 1;
 }
 
 .main-list4 {
@@ -246,19 +276,58 @@ h3 {
 }
 
 .main-list4 button {
+  font-size: 1.5rem;
   background-color: transparent;
   border: 2px solid white;
   color: white;
-  width: 150px;
-  height: 50px;
+  width: 205px;
+  height: 53px;
   border-radius: 10px;
   cursor: pointer;
 }
 
 .main-list4 button:nth-child(1) {
   margin-right: 50px;
+  background-color: red;
+  border: 4px solid transparent;
+  border-radius: 15px;
+  box-shadow: 0 0 7px 8px rgba(255, 0, 0, 0.302);
 }
 
 .main-list4 button:hover {
-  border: 2px solid red;
+  background-color: #fff;
+  border: 3px solid #fff;
+  box-shadow: none;
+  color: red;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s eas;
+}
+
+.ps-img {
+  width: 390px;
+  height: 590px;
+  border-radius: 15px;
+}
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: -200px; */
+  max-width: 1260px;
+  padding: 0 2rem;
+  position: relative;
+}
+.bg-img {
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.txt_wrap {
+  position: absolute;
+  top: 0;
+}
+.txt_wrap p {
+  color: #fff;
 }
